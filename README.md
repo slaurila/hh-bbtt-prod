@@ -19,7 +19,10 @@ The current version is based on [NanoAODv15](https://gitlab.cern.ch/cms-nanoAOD/
 
 Customizations:
 
-- Add all raw scores of the new ParticleNetMD AK8 training.
+- Add all raw scores of the new central ParticleNetMD AK8 training (`FatJet_ParticleNet_raw_*`).
+- Add all raw scores of the private ParticleNetMD AK8 training with ee, emu, and mumu scores (`FatJet_ParticleNet_newlabel_raw_*`)
+- Add all raw scores of the private ParticleNetMD AK8 training with ee, emu, and mumu scores and W+Jets samples included in the training (`FatJet_ParticleNet_newlabelwjets_raw_*`)
+
 
 ---
 
@@ -42,9 +45,15 @@ git clone git@github.com:danyi211/RecoBTag-Combined.git RecoBTag/Combined/data
 scram b -j
 ```
 
+Clone this repository:
+```bash
+git clone git@github.com:slaurila/hh-bbtt-prod.git
+cd hh-bbtt-prod
+```
+
 ## Production
 
-**Step 0**: switch to the crab production directory and set up grid proxy, CRAB environment, etc.
+**Step 0**: Run the steps above and then set up the grid proxy, CRAB environment, etc:
 
 ```bash
 # set up grid proxy
@@ -53,7 +62,7 @@ voms-proxy-init -rfc -voms cms --valid 168:00
 source /cvmfs/cms.cern.ch/common/crab-setup.sh
 ```
 
-**Step 1**: generate the python config file with `generateConfigs.sh`.
+**Step 1**: generate the python config file by running `./generateConfigs.sh`.
 
 **Step 2**: use the `crab.py` script to submit the CRAB jobs:
 
