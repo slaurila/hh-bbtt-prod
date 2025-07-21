@@ -31,6 +31,17 @@ cd CMSSW_15_0_7/src
 cmsenv
 ```
 
+Customized CMSSW to add new taggers:
+```bash
+git cms-init
+git cms-addpkg PhysicsTools/NanoAOD PhysicsTools/PatAlgos RecoBTag/ONNXRuntime RecoBTag/Combined
+git remote add danyifork git@github.com:danyi211/cmssw.git
+git fetch danyifork
+git pull danyifork from-CMSSW_15_0_7
+git clone git@github.com:danyi211/RecoBTag-Combined.git RecoBTag/Combined/data
+scram b -j
+```
+
 ## Production
 
 **Step 0**: switch to the crab production directory and set up grid proxy, CRAB environment, etc.
