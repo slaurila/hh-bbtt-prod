@@ -7,28 +7,28 @@ EOF
 customize_data="${customize_mc//nanoSequenceMC/nanoSequence}"
 
 # MC, 2018UL nano v15 customized
-cmsDriver.py mc_2018UL -s NANO --process NANO --mc  --eventcontent NANOAODSIM --datatier NANOAODSIM -n -1 --era Run2_2018,run2_nanoAOD_106Xv2 --conditions 131X_upgrade2018_realistic_v3 --filein file:inMINIAOD.root  --fileout file:nano.root --no_exec --customise_commands="$customize_mc"
+cmsDriver.py mc_2018UL -s NANO --process NANO --mc  --eventcontent NANOAODSIM --datatier NANOAODSIM -n -1 --era Run2_2018,run2_nanoAOD_106Xv2 --conditions 131X_upgrade2018_realistic_v3 --filein file:inMINIAOD.root  --fileout file:nano.root --no_exec --nThreads 4  --customise_commands="$customize_mc"
 
 # Data, 2018UL nano v15 customized
-cmsDriver.py data_2018UL -s NANO --process NANO --data  --eventcontent NANOAOD --datatier NANOAOD -n -1 --era Run2_2018,run2_nanoAOD_106Xv2 --conditions 141X_dataRun2_v3 --filein file:inMINIAOD.root  --fileout file:nano.root --no_exec --customise_commands="$customize_data"
+cmsDriver.py data_2018UL -s NANO --process NANO --data  --eventcontent NANOAOD --datatier NANOAOD -n -1 --era Run2_2018,run2_nanoAOD_106Xv2 --conditions 141X_dataRun2_v3 --filein file:inMINIAOD.root  --fileout file:nano.root --no_exec --nThreads 4  --customise_commands="$customize_data"
 
 # MC, 2017UL
-cmsDriver.py mc_2017UL -s NANO --process NANO --mc  --eventcontent NANOAODSIM --datatier NANOAODSIM -n -1 --era Run2_2017,run2_nanoAOD_106Xv2 --conditions 131X_mc2017_realistic_v3 --filein file:inMINIAOD.root  --fileout file:nano.root --no_exec --customise_commands="$customize_mc"
+cmsDriver.py mc_2017UL -s NANO --process NANO --mc  --eventcontent NANOAODSIM --datatier NANOAODSIM -n -1 --era Run2_2017,run2_nanoAOD_106Xv2 --conditions 131X_mc2017_realistic_v3 --filein file:inMINIAOD.root  --fileout file:nano.root --no_exec --nThreads 4  --customise_commands="$customize_mc"
 
 # Data, 2017UL
-cmsDriver.py data_2017UL -s NANO --process NANO --data  --eventcontent NANOAOD --datatier NANOAOD -n -1 --era Run2_2017,run2_nanoAOD_106Xv2 --conditions 141X_dataRun2_v3 --filein file:inMINIAOD.root  --fileout file:nano.root --no_exec --customise_commands="$customize_data"
+cmsDriver.py data_2017UL -s NANO --process NANO --data  --eventcontent NANOAOD --datatier NANOAOD -n -1 --era Run2_2017,run2_nanoAOD_106Xv2 --conditions 141X_dataRun2_v3 --filein file:inMINIAOD.root  --fileout file:nano.root --no_exec --nThreads 4  --customise_commands="$customize_data"
 
 # MC, 2016ULpreVFP
-cmsDriver.py mc_2016ULpreVFP -s NANO --process NANO --mc  --eventcontent NANOAODSIM --datatier NANOAODSIM -n -1 --era Run2_2016_HIPM,run2_nanoAOD_106Xv2 --conditions 131X_mcRun2_asymptotic_preVFP_v3 --filein file:inMINIAOD.root  --fileout file:nano.root --no_exec --customise_commands="$customize_mc"
+cmsDriver.py mc_2016ULpreVFP -s NANO --process NANO --mc  --eventcontent NANOAODSIM --datatier NANOAODSIM -n -1 --era Run2_2016_HIPM,run2_nanoAOD_106Xv2 --conditions 131X_mcRun2_asymptotic_preVFP_v3 --filein file:inMINIAOD.root  --fileout file:nano.root --no_exec --nThreads 4  --customise_commands="$customize_mc"
 
 # Data, 2016ULpreVFP
-cmsDriver.py data_2016ULpreVFP -s NANO --process NANO --data  --eventcontent NANOAOD --datatier NANOAOD -n -1 --era Run2_2016_HIPM,run2_nanoAOD_106Xv2 --conditions 141X_dataRun2_v3 --filein file:inMINIAOD.root  --fileout file:nano.root --no_exec --customise_commands="$customize_data"
+cmsDriver.py data_2016ULpreVFP -s NANO --process NANO --data  --eventcontent NANOAOD --datatier NANOAOD -n -1 --era Run2_2016_HIPM,run2_nanoAOD_106Xv2 --conditions 141X_dataRun2_v3 --filein file:inMINIAOD.root  --fileout file:nano.root --no_exec --nThreads 4  --customise_commands="$customize_data"
 
 # MC, 2016ULpostVFP
-cmsDriver.py mc_2016ULpostVFP -s NANO --process NANO --mc  --eventcontent NANOAODSIM --datatier NANOAODSIM -n -1 --era Run2_2016,run2_nanoAOD_106Xv2 --conditions 131X_mcRun2_asymptotic_v3 --filein file:inMINIAOD.root  --fileout file:nano.root --no_exec --customise_commands="$customize_mc"
+cmsDriver.py mc_2016ULpostVFP -s NANO --process NANO --mc  --eventcontent NANOAODSIM --datatier NANOAODSIM -n -1 --era Run2_2016,run2_nanoAOD_106Xv2 --conditions 131X_mcRun2_asymptotic_v3 --filein file:inMINIAOD.root  --fileout file:nano.root --no_exec --nThreads 4  --customise_commands="$customize_mc"
 
 # Data, 2016ULpostVFP
-cmsDriver.py data_2016ULpostVFP -s NANO --process NANO --data  --eventcontent NANOAOD --datatier NANOAOD -n -1 --era Run2_2016,run2_nanoAOD_106Xv2 --conditions 141X_dataRun2_v3 --filein file:inMINIAOD.root  --fileout file:nano.root --no_exec --customise_commands="$customize_data"
+cmsDriver.py data_2016ULpostVFP -s NANO --process NANO --data  --eventcontent NANOAOD --datatier NANOAOD -n -1 --era Run2_2016,run2_nanoAOD_106Xv2 --conditions 141X_dataRun2_v3 --filein file:inMINIAOD.root  --fileout file:nano.root --no_exec --nThreads 4  --customise_commands="$customize_data"
 
 for cfg in $(ls *UL*.py); do
     echo "Adding ParticleNet raw scores to ${cfg}"
