@@ -66,16 +66,16 @@ source /cvmfs/cms.cern.ch/common/crab-setup.sh
 
 **Step 2**: use the `crab.py` script to submit the CRAB jobs:
 
-For MC:
+For MC (to process the QCD samples, just replace `part1.py` by `part2_QCD` in the commancs):
 
 ```bash
-python3 crab.py -p mc_2018UL_NANO.py --max-memory 2500 --site T2_CH_CERN -o /store/group/cmst3/group/hh/NanoAOD/20250717_NanoAODv15/2018/mc -t NanoAOD-14Jun2023_newPN -i mc/mc_2018.conf --num-cores 4 -s FileBased -n 2 --work-area crab_projects_2018UL --dryrun
+python3 crab.py -p mc_2018UL_NANO.py --max-memory 2500 --site T2_CH_CERN -o /store/group/cmst3/group/hh/NanoAOD/20250717_NanoAODv15/2018/mc -t NanoAOD-14Jun2023_newPN -i mc/mc_2018_part1.conf --num-cores 4 -s FileBased -n 2 --work-area crab_projects_2018UL --dryrun
 
-python3 crab.py -p mc_2017UL_NANO.py --max-memory 2500 --site T2_CH_CERN -o /store/group/cmst3/group/hh/NanoAOD/20250717_NanoAODv15/2017/mc -t NanoAOD-14Jun2023_newPN -i mc/mc_2017.conf --num-cores 4 -s FileBased -n 2 --work-area crab_projects_2017UL --dryrun
+python3 crab.py -p mc_2017UL_NANO.py --max-memory 2500 --site T2_CH_CERN -o /store/group/cmst3/group/hh/NanoAOD/20250717_NanoAODv15/2017/mc -t NanoAOD-14Jun2023_newPN -i mc/mc_2017_part1.conf --num-cores 4 -s FileBased -n 2 --work-area crab_projects_2017UL --dryrun
 
-python3 crab.py -p mc_2016ULpostVFP_NANO.py --max-memory 2500 --site T2_CH_CERN -o /store/group/cmst3/group/hh/NanoAOD/20250717_NanoAODv15/2016/mc -t NanoAOD-14Jun2023_newPN -i mc/mc_2016post.conf --num-cores 4 -s FileBased -n 2 --work-area crab_projects_2016ULpostVFP --dryrun
+python3 crab.py -p mc_2016ULpostVFP_NANO.py --max-memory 2500 --site T2_CH_CERN -o /store/group/cmst3/group/hh/NanoAOD/20250717_NanoAODv15/2016/mc -t NanoAOD-14Jun2023_newPN -i mc/mc_2016post_part1.conf --num-cores 4 -s FileBased -n 2 --work-area crab_projects_2016ULpostVFP --dryrun
 
-python3 crab.py -p mc_2016ULpreVFP_NANO.py --max-memory 2500 --site T2_CH_CERN -o /store/group/cmst3/group/hh/NanoAOD/20250717_NanoAODv15/2016APV/mc -t NanoAOD-14Jun2023_newPN -i mc/mc_2016pre.conf --num-cores 4 -s FileBased -n 2 --work-area crab_projects_2016ULpreVFP --dryrun
+python3 crab.py -p mc_2016ULpreVFP_NANO.py --max-memory 2500 --site T2_CH_CERN -o /store/group/cmst3/group/hh/NanoAOD/20250717_NanoAODv15/2016APV/mc -t NanoAOD-14Jun2023_newPN -i mc/mc_2016pre_part1.conf --num-cores 4 -s FileBased -n 2 --work-area crab_projects_2016ULpreVFP --dryrun
 ```
 
 For Data:
