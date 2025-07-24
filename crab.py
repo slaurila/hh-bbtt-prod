@@ -257,6 +257,8 @@ def createConfig(args, dataset):
             config.General.requestName = config.General.requestName
             config.Data.ignoreLocality = True
             config.Site.whitelist = ['T2_US_*'] + t2_sites
+    if isMC:
+        config.Data.partialDataset = True
 
     # write config file
     cfgpath = writeConfig(config, args.work_area)
