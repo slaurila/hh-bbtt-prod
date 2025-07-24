@@ -66,7 +66,7 @@ source /cvmfs/cms.cern.ch/common/crab-setup.sh
 
 **Step 2**: use the `crab.py` script to submit the CRAB jobs:
 
-For MC:
+For MC (to process the QCD samples, just replace `part1.py` by `part2_QCD` in the commancs):
 
 ```bash
 python3 crab.py -p mc_2018UL_NANO.py --max-memory 4000 --site T2_CH_CERN -o /store/group/cmst3/group/hh/NanoAOD/20250717_NanoAODv15/2018/mc -t NanoAOD-v15_July2025 -i mc/mc_2018.conf --num-cores 4 -s FileBased -n 2 --work-area crab_projects_2018UL --dryrun
