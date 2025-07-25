@@ -45,8 +45,14 @@ git clone git@github.com:danyi211/RecoBTag-Combined.git RecoBTag/Combined/data
 scram b -j
 ```
 
-You'll have to clean up `RecoBTag/Combined/data` so the size of the tarball is within the CRAB limits.
-
+You'll have to clean up `RecoBTag/Combined/data` so the size of the tarball is within the CRAB limits; for example:
+```bash
+rm -rf RecoBTag/Combined/data/GlobalParticleTransformerAK8
+rm -rf RecoBTag/Combined/data/models/unifiedparticletransformer_AK4_V01
+rm -rf RecoBTag/Combined/data/Deep*
+rm .git
+rm RecoBTag/Combined/data/.git
+```
 Clone this repository:
 ```bash
 git clone -b nano-v15-run2-customized git@github.com:slaurila/hh-bbtt-prod.git
@@ -71,38 +77,43 @@ source /cvmfs/cms.cern.ch/common/crab-setup.sh
 For MC (to process the QCD samples, just replace `part1` by `part2_QCD` in the commands):
 
 ```bash
-python3 crab.py -p mc_2018UL_NANO.py --max-memory 5000 --site T2_CH_CERN -o /store/group/cmst3/group/hh/NanoAOD/20250717_NanoAODv15/2018/mc -t NanoAOD-v15_July2025 -i mc/mc_2018_part1.conf --num-cores 4 -s FileBased -n 2 --work-area crab_projects_2018UL --dryrun
+python3 crab.py -p mc_2018UL_NANO.py --max-memory 5000 --site T2_CH_CERN -o /store/group/cmst3/group/hh/NanoAOD/20250725_v15/2018/mc -t NanoAOD-v15_July2025 -i mc/mc_2018_part1.conf --num-cores 4 -s FileBased -n 2 --work-area crab_projects_2018UL --dryrun
 
-python3 crab.py -p mc_2017UL_NANO.py --max-memory 5000 --site T2_CH_CERN -o /store/group/cmst3/group/hh/NanoAOD/20250717_NanoAODv15/2017/mc -t NanoAOD-v15_July2025 -i mc/mc_2017_part1.conf --num-cores 4 -s FileBased -n 2 --work-area crab_projects_2017UL --dryrun
+python3 crab.py -p mc_2017UL_NANO.py --max-memory 5000 --site T2_CH_CERN -o /store/group/cmst3/group/hh/NanoAOD/20250725_v15/2017/mc -t NanoAOD-v15_July2025 -i mc/mc_2017_part1.conf --num-cores 4 -s FileBased -n 2 --work-area crab_projects_2017UL --dryrun
 
-python3 crab.py -p mc_2016ULpostVFP_NANO.py --max-memory 5000 --site T2_CH_CERN -o /store/group/cmst3/group/hh/NanoAOD/20250717_NanoAODv15/2016/mc -t NanoAOD-v15_July2025 -i mc/mc_2016post_part1.conf --num-cores 4 -s FileBased -n 2 --work-area crab_projects_2016ULpostVFP --dryrun
+python3 crab.py -p mc_2016ULpostVFP_NANO.py --max-memory 5000 --site T2_CH_CERN -o /store/group/cmst3/group/hh/NanoAOD/20250725_v15/2016/mc -t NanoAOD-v15_July2025 -i mc/mc_2016post_part1.conf --num-cores 4 -s FileBased -n 2 --work-area crab_projects_2016ULpostVFP --dryrun
 
-python3 crab.py -p mc_2016ULpreVFP_NANO.py --max-memory 5000 --site T2_CH_CERN -o /store/group/cmst3/group/hh/NanoAOD/20250717_NanoAODv15/2016APV/mc -t NanoAOD-v15_July2025 -i mc/mc_2016pre_part1.conf --num-cores 4 -s FileBased -n 2 --work-area crab_projects_2016ULpreVFP --dryrun
+python3 crab.py -p mc_2016ULpreVFP_NANO.py --max-memory 5000 --site T2_CH_CERN -o /store/group/cmst3/group/hh/NanoAOD/20250725_v15/2016APV/mc -t NanoAOD-v15_July2025 -i mc/mc_2016pre_part1.conf --num-cores 4 -s FileBased -n 2 --work-area crab_projects_2016ULpreVFP --dryrun
 ```
 
 For Data:
 
 ```bash
-python3 crab.py -p data_2018UL_NANO.py --max-memory 5000 --site T2_CH_CERN -o /store/group/cmst3/group/hh/NanoAOD/20250717_NanoAODv15/2018/data -t NanoAOD-v15_July2025 -i data/data_2018.conf --num-cores 4 -s EventAwareLumiBased -n 100000 -j 'https://cms-service-dqmdc.web.cern.ch/CAF/certification/Collisions18/13TeV/Legacy_2018/Cert_314472-325175_13TeV_Legacy2018_Collisions18_JSON.txt' --work-area crab_projects_data_2018UL --dryrun
+python3 crab.py -p data_2018UL_NANO.py --max-memory 5000 --site T2_CH_CERN -o /store/group/cmst3/group/hh/NanoAOD/20250725_v15/2018/data -t NanoAOD-v15_July2025 -i data/data_2018.conf --num-cores 4 -s EventAwareLumiBased -n 100000 -j 'https://cms-service-dqmdc.web.cern.ch/CAF/certification/Collisions18/13TeV/Legacy_2018/Cert_314472-325175_13TeV_Legacy2018_Collisions18_JSON.txt' --work-area crab_projects_data_2018UL --dryrun
 
-python3 crab.py -p data_2017UL_NANO.py --max-memory 5000 --site T2_CH_CERN -o /store/group/cmst3/group/hh/NanoAOD/20250717_NanoAODv15/2017/data -t NanoAOD-v15_July2025 -i data/data_2017.conf --num-cores 4 -s EventAwareLumiBased -n 100000 -j 'https://cms-service-dqmdc.web.cern.ch/CAF/certification/Collisions17/13TeV/Legacy_2017/Cert_294927-306462_13TeV_UL2017_Collisions17_GoldenJSON.txt' --work-area crab_projects_data_2017UL --dryrun
+python3 crab.py -p data_2017UL_NANO.py --max-memory 5000 --site T2_CH_CERN -o /store/group/cmst3/group/hh/NanoAOD/20250725_v15/2017/data -t NanoAOD-v15_July2025 -i data/data_2017.conf --num-cores 4 -s EventAwareLumiBased -n 100000 -j 'https://cms-service-dqmdc.web.cern.ch/CAF/certification/Collisions17/13TeV/Legacy_2017/Cert_294927-306462_13TeV_UL2017_Collisions17_GoldenJSON.txt' --work-area crab_projects_data_2017UL --dryrun
 
-python3 crab.py -p data_2016ULpostVFP_NANO.py --max-memory 5000 --site T2_CH_CERN -o /store/group/cmst3/group/hh/NanoAOD/20250717_NanoAODv15/2016/data -t NanoAOD-v15_July2025 -i data/data_2016post.conf --num-cores 4 -s EventAwareLumiBased -n 100000 -j 'https://cms-service-dqmdc.web.cern.ch/CAF/certification/Collisions16/13TeV/Legacy_2016/Cert_271036-284044_13TeV_Legacy2016_Collisions16_JSON.txt' --work-area crab_projects_data_2016ULpostVFP --dryrun
+python3 crab.py -p data_2016ULpostVFP_NANO.py --max-memory 5000 --site T2_CH_CERN -o /store/group/cmst3/group/hh/NanoAOD/20250725_v15/2016/data -t NanoAOD-v15_July2025 -i data/data_2016post.conf --num-cores 4 -s EventAwareLumiBased -n 100000 -j 'https://cms-service-dqmdc.web.cern.ch/CAF/certification/Collisions16/13TeV/Legacy_2016/Cert_271036-284044_13TeV_Legacy2016_Collisions16_JSON.txt' --work-area crab_projects_data_2016ULpostVFP --dryrun
 
-python3 crab.py -p data_2016ULpreVFP_NANO.py --max-memory 5000 --site T2_CH_CERN -o /store/group/cmst3/group/hh/NanoAOD/20250717_NanoAODv15/2016APV/data -t NanoAOD-v15_July2025 -i data/data_2016pre.conf --num-cores 4 -s EventAwareLumiBased -n 100000 -j 'https://cms-service-dqmdc.web.cern.ch/CAF/certification/Collisions16/13TeV/Legacy_2016/Cert_271036-284044_13TeV_Legacy2016_Collisions16_JSON.txt' --work-area crab_projects_data_2016ULpreVFP --dryrun
+python3 crab.py -p data_2016ULpreVFP_NANO.py --max-memory 5000 --site T2_CH_CERN -o /store/group/cmst3/group/hh/NanoAOD/20250725_v15/2016APV/data -t NanoAOD-v15_July2025 -i data/data_2016pre.conf --num-cores 4 -s EventAwareLumiBased -n 100000 -j 'https://cms-service-dqmdc.web.cern.ch/CAF/certification/Collisions16/13TeV/Legacy_2016/Cert_271036-284044_13TeV_Legacy2016_Collisions16_JSON.txt' --work-area crab_projects_data_2016ULpreVFP --dryrun
 ```
 
 These command will perform a "dryrun" to print out the CRAB configuration files. Please check everything is correct (e.g., the output path, version number, requested number of cores, etc.) before submitting the actual jobs. To actually submit the jobs to CRAB, just remove the `--dryrun` option at the end.
 
-**Step 3**: check job status
+**Step 3**: check job status and resubmit as needed
 
-The status of the CRAB jobs can be checked with:
+The check the status of the CRAB jobs can be checked with:
 
 ```bash
-./crab.py --status --work-area crab_projects_*  --options "maxjobruntime=4000 maxmemory=4000" && ./crab.py --summary
+./crab.py --status --work-area crab_projects_* && ./crab.py --summary  --no-resubmit
 ```
 
-Note that this will also **resubmit** failed jobs automatically.
+To **resubmit** failed jobs with longer runtime, you can run e.g.:
+```bash
+./crab.py --status --work-area crab_projects_* --options "maxjobruntime=3000" && ./crab.py --summary
+```
+
+For data it is important to "catch the tails" and resubmit until the samples are >99 percent done, for MC this is not that critical.
 
 The crab dashboard can also be used to get a quick overview of the job status:
 
