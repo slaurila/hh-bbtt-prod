@@ -47,9 +47,9 @@ scram b -j
 
 You'll have to clean up `RecoBTag/Combined/data` so the size of the tarball is within the CRAB limits; for example:
 ```bash
-rm -rf RecoBTag/Combined/data/GlobalParticleTransformerAK8
-rm -rf RecoBTag/Combined/data/models/unifiedparticletransformer_AK4_V01
 rm -rf RecoBTag/Combined/data/Deep*
+rm -rf RecoBTag/Combined/data/Run3Scouting
+rm -rf RecoBTag/Combined/data/HLT
 rm .git
 rm RecoBTag/Combined/data/.git
 ```
